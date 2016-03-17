@@ -23,7 +23,7 @@ you have not previously done so. Follow the instructions at the link provided. I
 ## Testing Access
 Run the following and make sure you see data flowing and that no errors occur.
 
-$ python twitterstream.py > output.txt
+$ python myTwitterstream.py > output.txt
 
 This command pipes the output to a file. Stop the program with Ctrl-C, but wait at least 3 minutes for data to accumulate. 
 
@@ -51,7 +51,7 @@ The script should print to stdout the sentiment of each tweet in the file, one n
 This is real-world data, and it can be messy!
 
 ## What to turn in:
-The file mytweet_sentiment.py after you've verified that it returns the correct answers.
+The file myTweetSentiment.py after you've verified that it returns the correct answers.
 
 ## 3 Derive the sentiment of new terms
 
@@ -63,7 +63,7 @@ For example, if you have the pair ("foo", 103.256) in Python, it should appear i
 foo 103.256
 
 ## What to turn in: 
-The file myterm_sentiment.py
+The file myTermSentiment.py
 
 
 ## 4 Compute Term Frequency
@@ -82,13 +82,13 @@ For example, if you have the pair (bar, 0.1245) in Python it should appear in th
 bar 0.1245
 
 ## What to turn in: 
-The file myfrequency.py
+The file myFrequency.py
 
 ## 6 Which State is happiest?
 
 A Python script myhappiest_state.py that returns the name of the happiest state as a string.
 Your script happiest_state.py should take a file of tweets as input. It will be called from the command line like this:
-$ python myhappiest_state.py <sentiment_file> <tweet_file>
+$ python myHappiest_State.py <sentiment_file> <tweet_file>
 
 The file AFINN-111.txt contains a list of pre-computed sentiment score.
 
@@ -101,14 +101,14 @@ The script should print the two letter state abbreviation of the state with the 
 Note that you may need a lot of tweets in order to get enough tweets with location data. Let the live stream run for a while if you wish.
 
 ## What to turn in: 
-The file myhappiest_state.py
+The file myHappiest_State.py
 
 ## 6 Top ten hash tags
 
 A Python script mytop_ten.py that computes the ten most frequently occurring hashtags from the data you gathered in Problem 1.
 
 Your script will be run from the command line like this:
-$ python mytop_ten.py <tweet_file>
+$ python myTop_Ten.py <tweet_file>
 
 You should assume the tweet file contains data formatted the same way as the livestream data.
 
@@ -119,5 +119,5 @@ There should be one line per unique hashtag in the entire file. Each line should
 For example, if you have the pair (bar, 30) in Python it should appear in the output as: bar 30
 
 ## What to turn in: 
-the file mytop_ten.py
+the file myTop_Ten.py
 
