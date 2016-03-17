@@ -1,6 +1,4 @@
-""
-#python happiest_state.py AFINN-111.txt output.txt
-""
+
 
 import sys, json, types
 

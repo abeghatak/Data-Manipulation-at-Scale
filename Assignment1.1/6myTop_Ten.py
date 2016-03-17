@@ -1,4 +1,4 @@
-# python top_ten.py output.txt
+
 
 import sys, json, types, operator
 
