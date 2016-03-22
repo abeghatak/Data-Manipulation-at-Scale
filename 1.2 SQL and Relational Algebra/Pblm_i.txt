@@ -1,0 +1,40 @@
+sqlite3 reuters.db
+.output part_i.txt
+CREATE TABLE temp_1 (
+docid VARCHAR(255),
+term VARCHAR(255),
+count int,
+PRIMARY KEY(docid, term));
+
+INSERT INTO temp_1  
+SELECT *
+FROM
+(SELECT * FROM frequency
+UNION
+SELECT 'q' as docid, 'washington' as term, 1 as [count] 
+UNION
+SELECT 'q' as docid, 'taxes' as term, 1 as [count]
+UNION 
+SELECT 'q' as docid, 'treasury' as term, 1 as [count]);
+
+CREATE TABLE temp_2 (
+docid VARCHAR(255),
+score int);
+
+INSERT into temp_2
+SELECT 
+B.docid as doc,
+SUM(a.[count] * b.[count] ) AS sim_score
+FROM
+temp_1 A
+JOIN temp_1 B on A.term=B.term
+WHERE A.docid = 'q'
+GROUP BY 
+A.docid,
+B.docid;
+
+SELECT MAX(score) FROM temp_2;
+
+DROP table temp_1;
+DROP table temp_2;
+

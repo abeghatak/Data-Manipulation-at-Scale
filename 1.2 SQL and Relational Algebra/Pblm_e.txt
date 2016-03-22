@@ -1,0 +1,3 @@
+sqlite3 reuters.db
+.output part_e.txt
+select count(*) from ( select docid, SUM([count]) as cnt from frequency group BY docid having SUM([count]) > 300);

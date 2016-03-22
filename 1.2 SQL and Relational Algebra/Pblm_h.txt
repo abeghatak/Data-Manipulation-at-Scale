@@ -1,0 +1,15 @@
+sqlite3 reuters.db
+.output part_h.txt
+SELECT c.value 
+FROM
+(SELECT 
+A.docid AS doc1,
+B.docid AS doc2,
+SUM(a.[count] * b.[count]) AS value
+FROM
+frequency A
+JOIN frequency B on A.term = B.term
+WHERE A.docid = '10080_txt_crude' AND B.docid = '17035_txt_earn'
+GROUP BY 
+A.docid, B.docid
+) C;

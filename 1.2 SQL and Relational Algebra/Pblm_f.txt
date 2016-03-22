@@ -1,0 +1,13 @@
+sqlite3 reuters.db
+.output part_f.txt
+Select count(*)
+FROM(
+(SELECT docid
+FROM frequency
+WHERE term = "world" ) t1
+JOIN
+(SELECT docid
+FROM frequency
+WHERE term = "transactions" ) t2
+ON  t1.docid=t2.docid  
+);
